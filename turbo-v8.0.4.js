@@ -1449,10 +1449,10 @@ Copyright © 2024 37signals LLC
     focusElement(element) {
       if (element instanceof HTMLElement) {
         if (element.hasAttribute("tabindex")) {
-          element.focus();
+          element.focus({preventScroll: true});
         } else {
           element.setAttribute("tabindex", "-1");
-          element.focus();
+          element.focus({preventScroll: true});
           element.removeAttribute("tabindex");
         }
       }
@@ -3395,7 +3395,6 @@ Copyright © 2024 37signals LLC
       const anchor = getAnchor(location);
       const currentAnchor = getAnchor(this.view.lastRenderedLocation);
       const isRestorationToTop = action === "restore" && typeof anchor === "undefined";
-
       return (
         action !== "replace" &&
         getRequestURL(location) === getRequestURL(this.view.lastRenderedLocation) &&
