@@ -5,7 +5,7 @@ While `data-turbo="false"` seems to solve the problem, it seems that something e
 
 Not sure if this happens in other browsers, I can't test on any other unfortunately.
 
-##Update
+## Update
 Smooth scroll seems to be respected now if the following modifications are made:
 - On `class View`, line _1449_:
 ```javascript
